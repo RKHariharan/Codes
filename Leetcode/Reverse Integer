@@ -1,0 +1,24 @@
+class Solution {
+    public int reverse(int x) {
+      int num,temp=0,ans=0,ztemp;
+      String t="";
+       num=Math.abs(x); //to  remove the sign if x is negative
+      while(num!=0)
+      {
+              temp=num%10;
+              String str=Integer.toString(temp);
+              t=t+str;
+              num=num/10;
+      }
+      try{
+           ans=Integer.parseInt(t);
+            if(x<0)
+             ans=-ans; //to insert the sign
+      }
+      catch (NumberFormatException e) {
+          
+      }
+      return ans;
+    }
+}
+//function for reverse an integer
