@@ -1,0 +1,40 @@
+//without using string
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x<0 || x>2147483647 || x<-2147483648)
+         return false;
+        long rev=0,temp=x,last,t;
+        while(temp>0)
+        {
+            last=temp%10;
+            rev=rev*10+last;
+            temp=temp/10;
+        }
+        if(rev==x)
+         return true;
+        else
+         return false;
+    }
+}
+
+//with using string
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x<0 || x>2147483647 || x<-2147483648)
+         return false;
+        String x1=Integer.toString(x);
+        int len=x1.length();
+        long rev;
+        String ans="";
+        for(int i=len-1;i>=0;i--)
+        {
+            ans=ans+x1.charAt(i);
+        }
+        rev=Long.parseLong(ans);
+        Long z=new Long(x);
+        if(rev==x)
+         return true;
+        else
+         return false;
+    }
+}
